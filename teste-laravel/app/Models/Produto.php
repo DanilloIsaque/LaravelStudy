@@ -8,5 +8,6 @@ use Illuminate\Database\Eloquent\Model;
 class Produto extends Model
 {
     use HasFactory;
-    protected$table ='PRODUTO';  //fazer com que ele reconheça a tabela do banco e trocar o nome da tabela
+    protected $table ='PRODUTO';  //fazer com que ele reconheça a tabela do banco e trocar o nome da tabela
+    protected $primaryKey ='PRODUTO_ID';
 }
