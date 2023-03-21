@@ -95,13 +95,19 @@
                 <p>
                     <ul class="list-group list-group-flush">
                         <li class="list-group-item">{{$produto->PRODUTO_DESC}}</li>
-                        <li class="list-group-item">{{$produto->CATEGORIA_ID}}</li>
+                        <li class="list-group-item">{{$produto->Categoria->CATEGORIA_NOME}}</li>
                     </ul>
                 </p>
+                <span>Quantidade disponivel:{{$produto->ProdutoEstoque}}</span>
                 <span>Valor original:R${{$produto->PRODUTO_PRECO}} </span>
                 <span>Desconto:R${{$produto->PRODUTO_DESCONTO}}</span><br><br>
+                <span>{{\App\Models\Categoria::find($produto->CATEGORIA_ID)->Produtos}}</span>
+
+                <!--ira filtrar todos os produtos com a mesma categoria do produto da tela-->
                 <span>Valor do produto com desconto: R${{$produto->PRODUTO_PRECO - $produto->PRODUTO_DESCONTO}}</span><br><br><br>
+
                 <a class="btn btn-primary" href="#" role="button">ADICIONAR AO CARRINHO</a>
+
 
             </div>
 
